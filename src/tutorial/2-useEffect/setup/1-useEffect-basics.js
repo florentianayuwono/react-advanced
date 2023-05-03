@@ -10,7 +10,9 @@ const UseEffectBasics = () => {
     if (value >= 1) {
       document.title = `New Things!(${value})`;
     }
-  });
+  }, [value]); // Adding second argument as empty array "[]" means the effect will only run on inital render
+  // Adding dependency value as "[value]" means everytime value is changed effect will run
+
   console.log("Is it rendering?");
   return (
     <>
