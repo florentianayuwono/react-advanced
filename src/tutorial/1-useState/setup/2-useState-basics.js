@@ -1,7 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const UseStateBasics = () => {
-  return <h2>useState basic example</h2>;
+  // console.log(useState("Hello World"));
+  // useState is an array of [default value, function that will change the value]
+  const [text, setText] = useState("Hello World")
+  const handleClick = () => {
+    if (text === "Hello World") {
+      setText("It changed!") // Change the "text" title
+    } else {
+      setText("Hello World") // Change the "text" title
+    }
+  }
+  return <React.Fragment>
+    <h1>{text}</h1>
+    <button className="btn" onClick={handleClick}>
+      Change the title for real!
+    </button>
+  </React.Fragment>
 };
 
 export default UseStateBasics;
